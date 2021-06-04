@@ -1,0 +1,52 @@
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ ls -al
+total 13
+drwxr-xr-x 1 GVR 197121  0 May 30 20:07 ./
+drwxr-xr-x 1 GVR 197121  0 May 30 20:05 ../
+drwxr-xr-x 1 GVR 197121  0 May 30 20:08 .git/
+drwxr-xr-x 1 GVR 197121  0 May 30 20:07 GitDemo/
+-rw-r--r-- 1 GVR 197121 31 May 30 20:07 welcome.txt
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ touch file1.log
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ mkdir log
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GitDemo/
+        file1.log
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ touch ~/.gitignore_global
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git config --global core.excludesfile ~/.gitignore_global
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ vi ~/.gitignore_global
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ cat ~/.gitignore_global
+I Kathiravan
+
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ *.log
+bash: file1.log: command not found
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GitDemo/
+        file1.log
+
+nothing added to commit but untracked files present (use "git add" to track)

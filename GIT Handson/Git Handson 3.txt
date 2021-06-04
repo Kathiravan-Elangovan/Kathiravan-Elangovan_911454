@@ -1,0 +1,498 @@
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git branch
+* master
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GitDemo/
+        file1.log
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git branch GitNewBranch
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git branch
+  GitNewBranch
+* master
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git checkout GitNewBranch
+Switched to branch 'GitNewBranch'
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitNewBranch)
+$ git branch
+* GitNewBranch
+  master
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitNewBranch)
+$ vi file2.txt
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitNewBranch)
+$ git status
+On branch GitNewBranch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GitDemo/
+        file1.log
+        file2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitNewBranch)
+$ git add .
+error: 'GitDemo/' does not have a commit checked out
+fatal: adding files failed
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitNewBranch)
+$ git add file2.txt
+warning: LF will be replaced by CRLF in file2.txt.
+The file will have its original line endings in your working directory
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitNewBranch)
+$ git commit -m "added file2.txt"
+[GitNewBranch f15908c] added file2.txt
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file2.txt
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitNewBranch)
+$ git status
+On branch GitNewBranch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GitDemo/
+        file1.log
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitNewBranch)
+$ git push origin GitNewBranch
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 305 bytes | 76.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'GitNewBranch' on GitHub by visiting:
+remote:      https://github.com/Kathiravan-Elangovan/Git-Handson/pull/new/GitNewBranch
+remote:
+To https://github.com/Kathiravan-Elangovan/Git-Handson.git
+ * [new branch]      GitNewBranch -> GitNewBranch
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitNewBranch)
+$ git log --oneline GitNewBranch
+f15908c (HEAD -> GitNewBranch, origin/GitNewBranch) added file2.txt
+a387bc0 (origin/master, master) first commit
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitNewBranch)
+$ git log --oneline master
+a387bc0 (origin/master, master) first commit
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitNewBranch)
+$ git checkout master
+Switched to branch 'master'
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git ls-l files
+git: 'ls-l' is not a git command. See 'git --help'.
+
+The most similar command is
+        ls-files
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git merge GitNewBranch
+Updating a387bc0..f15908c
+Fast-forward
+ file2.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file2.txt
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git log --oneline master
+f15908c (HEAD -> master, origin/GitNewBranch, GitNewBranch) added file2.txt
+a387bc0 (origin/master) first commit
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Kathiravan-Elangovan/Git-Handson.git
+   a387bc0..f15908c  master -> master
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git branch
+  GitNewBranch
+* master
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git branch GitWork
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git branch
+  GitNewBranch
+  GitWork
+* master
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git checkout GitWork
+Switched to branch 'GitWork'
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitWork)
+$ vi hello.xml
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitWork)
+$ git log --oneline GitWork
+f15908c (HEAD -> GitWork, origin/master, origin/GitNewBranch, master, GitNewBranch) added file2.txt
+a387bc0 first commit
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitWork)
+$ git log --oneline master
+f15908c (HEAD -> GitWork, origin/master, origin/GitNewBranch, master, GitNewBranch) added file2.txt
+a387bc0 first commit
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitWork)
+$ git add hello.xml
+warning: LF will be replaced by CRLF in hello.xml.
+The file will have its original line endings in your working directory
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitWork)
+$ git commit -m "added hello.xml"
+[GitWork 2d915d9] added hello.xml
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.xml
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitWork)
+$ git log --oneline GitWork
+2d915d9 (HEAD -> GitWork) added hello.xml
+f15908c (origin/master, origin/GitNewBranch, master, GitNewBranch) added file2.txt
+a387bc0 first commit
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitWork)
+$ git log --oneline master
+f15908c (origin/master, origin/GitNewBranch, master, GitNewBranch) added file2.txt
+a387bc0 first commit
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitWork)
+$ git checkout master
+Switched to branch 'master'
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ vi hello.xml
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git add hello.xml
+warning: LF will be replaced by CRLF in hello.xml.
+The file will have its original line endings in your working directory
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git commit -m "added hello.xml from master branch"
+[master 2e674c6] added hello.xml from master branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.xml
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git log --oneline master
+2e674c6 (HEAD -> master) added hello.xml from master branch
+f15908c (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+a387bc0 first commit
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git log --oneline GitWork
+2d915d9 (GitWork) added hello.xml
+f15908c (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+a387bc0 first commit
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git diff
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git diff hello.xml
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ vi hello.xml
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git diff hello.xml
+warning: LF will be replaced by CRLF in hello.xml.
+The file will have its original line endings in your working directory
+diff --git a/hello.xml b/hello.xml
+index 30ae88c..ab7ed3c 100644
+--- a/hello.xml
++++ b/hello.xml
+@@ -1 +1 @@
+-I Kathiravan
++I Kathir
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ vi hello.xml
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git diff hello.xml
+warning: LF will be replaced by CRLF in hello.xml.
+The file will have its original line endings in your working directory
+diff --git a/hello.xml b/hello.xml
+index 30ae88c..86bf839 100644
+--- a/hello.xml
++++ b/hello.xml
+@@ -1 +1 @@
+-I Kathiravan
++I Kathiravan Elangovan
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ vi hello.xml
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git diff hello.xml
+warning: LF will be replaced by CRLF in hello.xml.
+The file will have its original line endings in your working directory
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git log -oneline -graph -decorate -al
+error: did you mean `--decorate` (with two dashes)?
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git log --online --graph --decorate
+fatal: unrecognized argument: --online
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git log --oneline --graph --decorate
+* 2e674c6 (HEAD -> master) added hello.xml from master branch
+* f15908c (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+* a387bc0 first commit
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git log --oneline master
+2e674c6 (HEAD -> master) added hello.xml from master branch
+f15908c (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+a387bc0 first commit
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GitDemo/
+        file1.log
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git commit -m "modified hello.xml from master"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GitDemo/
+        file1.log
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GitDemo/
+        file1.log
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git add hello.xml
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git commit -m "modified hello.xml from master"
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GitDemo/
+        file1.log
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ vi hello.xml
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git diff hello.xml
+warning: LF will be replaced by CRLF in hello.xml.
+The file will have its original line endings in your working directory
+diff --git a/hello.xml b/hello.xml
+index 30ae88c..ab7ed3c 100644
+--- a/hello.xml
++++ b/hello.xml
+@@ -1 +1 @@
+-I Kathiravan
++I Kathir
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git log -oneline -graph -decorate -al
+error: did you mean `--decorate` (with two dashes)?
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git log --online --graph --decorate
+fatal: unrecognized argument: --online
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git log --oneline --graph --decorate
+* 2e674c6 (HEAD -> master) added hello.xml from master branch
+* f15908c (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+* a387bc0 first commit
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git log --oneline master
+2e674c6 (HEAD -> master) added hello.xml from master branch
+f15908c (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+a387bc0 first commit
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.xml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GitDemo/
+        file1.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git commit -m "modified hello.xml from master"
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.xml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GitDemo/
+        file1.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello.xml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GitDemo/
+        file1.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git add hello.xml
+warning: LF will be replaced by CRLF in hello.xml.
+The file will have its original line endings in your working directory
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git commit -m "modified hello.xml from master"
+[master e3a7af0] modified hello.xml from master
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GitDemo/
+        file1.log
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git log --oneline master
+e3a7af0 (HEAD -> master) modified hello.xml from master
+2e674c6 added hello.xml from master branch
+f15908c (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+a387bc0 first commit
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git log --oneline GitWork
+2d915d9 (GitWork) added hello.xml
+f15908c (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+a387bc0 first commit
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git checkout GitWork
+Switched to branch 'GitWork'
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (GitWork)
+$ git checkout master
+Switched to branch 'master'
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git merge GitWork
+CONFLICT (add/add): Merge conflict in hello.xml
+Auto-merging hello.xml
+Automatic merge failed; fix conflicts and then commit the result.
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master|MERGING)
+$ cat hello.xml
+<<<<<<< HEAD
+I Kathir
+=======
+I Kathiravan
+>>>>>>> GitWork
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master|MERGING)
+$ git log --oneline master
+e3a7af0 (HEAD -> master) modified hello.xml from master
+2e674c6 added hello.xml from master branch
+f15908c (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+a387bc0 first commit
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both added:      hello.xml
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GitDemo/
+        file1.log
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master|MERGING)
+$ git add hello.xml
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master|MERGING)
+$ git commit -m "hello.xml merged"
+[master b42a91c] hello.xml merged
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git log --oneline master
+b42a91c (HEAD -> master) hello.xml merged
+e3a7af0 modified hello.xml from master
+2e674c6 added hello.xml from master branch
+2d915d9 (GitWork) added hello.xml
+f15908c (origin/master, origin/GitNewBranch, GitNewBranch) added file2.txt
+a387bc0 first commit
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ cat hello.xml
+<<<<<<< HEAD
+I Kathir
+=======
+I Kathiravan
+>>>>>>> GitWork

@@ -1,0 +1,43 @@
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git ls-tree -r master
+100644 blob 86bf839c142fbb1bd7d6db8e0b03a238381ec79c    file1.txt
+100644 blob 30ae88cea60d9478dba7c41de54b4ae740558470    file2.txt
+100644 blob e5ef9734f47bb0cbdc57c8dcc84a89b9da0cbcc7    hello.xml
+100644 blob 47ea961690e64de40483e8ac3cf74f241ae40e8c    hello1.xml
+100644 blob a6144e0633f36528be7ed928860e7d92a02d88f4    welcome.txt
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GitDemo/
+        file1.log
+        hello1.txt
+        hello1.xml.orig
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git ls-remote
+From https://github.com/Kathiravan-Elangovan/Git-Handson.git
+f15908cae1c7c05d1c0a456f30603749a2a634a7        HEAD
+f15908cae1c7c05d1c0a456f30603749a2a634a7        refs/heads/GitNewBranch
+f15908cae1c7c05d1c0a456f30603749a2a634a7        refs/heads/master
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git remote add origin master
+error: remote origin already exists.
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git push origin master
+Enumerating objects: 22, done.
+Counting objects: 100% (22/22), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (17/17), done.
+Writing objects: 100% (21/21), 2.03 KiB | 130.00 KiB/s, done.
+Total 21 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), done.
+To https://github.com/Kathiravan-Elangovan/Git-Handson.git
+   f15908c..34f7392  master -> master
+

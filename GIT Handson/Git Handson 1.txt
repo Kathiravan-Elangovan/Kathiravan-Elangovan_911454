@@ -1,0 +1,120 @@
+
+GVR@DESKTOP-VU456RN MINGW64 ~
+$ cd desktop
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop
+$ mkdir 911454-Git-Handson
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop
+$ cd 911454-Git-Handson
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson
+$ git version
+git version 2.31.1.windows.1
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson
+$ git config --global user.name "Kathiravan Elangovan"
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson
+$ git config --global user.email "kathiravankutty04@gmail.com"
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson
+$ git config --global core.editor "notepad++.exe -multiInst -nosession"
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson
+$ git config --global -e
+hint: Waiting for your editor to close the file... notepad++.exe -multiInst -nosession: notepad++.exe: command not found
+error: There was a problem with the editor 'notepad++.exe -multiInst -nosession'.
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson
+$ notepad++
+bash: notepad++: command not found
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson
+$ git config --global --list
+user.username=Kathiravan-Elangovan
+user.name=Kathiravan Elangovan
+user.email=kathiravankutty04@gmail.com
+core.editor=notepad++.exe -multiInst -nosession
+core.excludesfile=C:/Users/GVR/.gitignore_global
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson
+$ git init GitDemo
+Initialized empty Git repository in C:/Users/GVR/Desktop/911454-Git-Handson/GitDemo/.git/
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson
+$ ls -al
+total 8
+drwxr-xr-x 1 GVR 197121 0 May 30 20:07 ./
+drwxr-xr-x 1 GVR 197121 0 May 30 20:05 ../
+drwxr-xr-x 1 GVR 197121 0 May 30 20:07 GitDemo/
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson
+$ echo "Welcome to the version control" >> welcome.txt
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson
+$ ls -al
+total 9
+drwxr-xr-x 1 GVR 197121  0 May 30 20:07 ./
+drwxr-xr-x 1 GVR 197121  0 May 30 20:05 ../
+drwxr-xr-x 1 GVR 197121  0 May 30 20:07 GitDemo/
+-rw-r--r-- 1 GVR 197121 31 May 30 20:07 welcome.txt
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson
+$ cat welcome.txt
+Welcome to the version control
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson
+$ git init
+Initialized empty Git repository in C:/Users/GVR/Desktop/911454-Git-Handson/.git/
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GitDemo/
+        welcome.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git add welcome.txt
+warning: LF will be replaced by CRLF in welcome.txt.
+The file will have its original line endings in your working directory
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git commit
+hint: Waiting for your editor to close the file... notepad++.exe -multiInst -nosession: notepad++.exe: command not found
+error: There was a problem with the editor 'notepad++.exe -multiInst -nosession'.
+Please supply the message using either -m or -F option.
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git commit -m "first commit"
+[master (root-commit) a387bc0] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 welcome.txt
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        GitDemo/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git remote add origin https://github.com/Kathiravan-Elangovan/Git-Handson.git
+
+GVR@DESKTOP-VU456RN MINGW64 ~/desktop/911454-Git-Handson (master)
+$ git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 258 bytes | 64.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Kathiravan-Elangovan/Git-Handson.git
+ * [new branch]      master -> master
